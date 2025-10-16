@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Matrices</title>
+  <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+  <h1>Calculadora de Matrices</h1>
+  <h2>Hay multiples opciones</h2>
+  <h3>1. Suma de matrices (A \+ B) <button></button><br>
+2. Resta de matrices (A \- B)<button></button><br>
+3. Multiplicación de matrices (A x B)<button></button><br>
+4. Multiplicación por escalar (k x A) <button></button><br>
+5. Transposición de matriz (AT)<button></button><br>
+6. Determinante de matriz (det(A))<button></button><br>
+7. Matriz inversa (A\-1)<button></button><br>
+8. Matriz identidad (In)<button></button><br>
+    <label for="filas">Filas:</label>
+  <input type="number" id="filas" min="2" max="9">
+  <label for="columnas">Columnas:</label>
+  <input type="number" id="columnas" min="2" max="9">
+  <button onclick="crearMatriz()">Crear matriz</button>
+  <div id="contenedorMatriz" class="matriz"></div>
+  <script src="script.js"></script>
+</body>
+</html>

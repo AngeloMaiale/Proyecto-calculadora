@@ -1,0 +1,12 @@
+.matriz {
+      display: grid;
+      gap: 5px;
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-right: 1500px;
+    }
+    input[type="number"] {
+      width: 50px;
+      padding: 5px;
+      text-align: center;
+    }
