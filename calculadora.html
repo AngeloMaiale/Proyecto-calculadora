@@ -8,20 +8,23 @@
 <body>
   <h1>Calculadora de Matrices</h1>
   <h2>Hay multiples opciones</h2>
-  <h3>1. Suma de matrices (A \+ B) <button></button><br>
-2. Resta de matrices (A \- B)<button></button><br>
-3. Multiplicación de matrices (A x B)<button></button><br>
-4. Multiplicación por escalar (k x A) <button></button><br>
-5. Transposición de matriz (AT)<button></button><br>
-6. Determinante de matriz (det(A))<button></button><br>
-7. Matriz inversa (A\-1)<button></button><br>
-8. Matriz identidad (In)<button></button><br>
-    <label for="filas">Filas:</label>
-  <input type="number" id="filas" min="2" max="9">
-  <label for="columnas">Columnas:</label>
-  <input type="number" id="columnas" min="2" max="9">
-  <button onclick="crearMatriz()">Crear matriz</button>
-  <div id="contenedorMatriz" class="matriz"></div>
+  <h3>1. Suma de matrices (A \+ B) <button Id="Suma"></button><br>
+2. Resta de matrices (A \- B)<button Id="Resta"></button><br>
+3. Multiplicación de matrices (A x B)<button Id="Mult"></button><br>
+4. Multiplicación por escalar (k x A) <button Id="MultEsc"></button><br>
+5. Transposición de matriz (AT)<button Id="Transp"></button><br>
+6. Determinante de matriz (det(A))<button Id="Det"></button><br>
+7. Matriz inversa (A\-1)<button Id="Inv">Aca</button><br>
+8. Matriz identidad (In)<button Id="Ide"></button><br>
+  <label>Tamaño de Matriz (nxn)</label>
+  <input type= "number" id="tmatriz">
+  <button id="CM">Crear</button><br>
+  <label>Matriz A</label><br>
+  <div id="contenedorMatrizA" class="matriz"></div><br>
+  <label>Matriz B</label><br>
+  <div id="contenedorMatrizB" class="matriz"></div><br>
+  <label>Resultado</label><br>
+  <div id="contenedorMatrizR" class="matriz"></div>
   <script src="script.js"></script>
 </body>
 </html>
