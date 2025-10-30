@@ -1,30 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Calculadora de Matrices</title>
-  <link rel="stylesheet" href="styles.css"> 
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Calculadora de Matrices</h1>
-  <h2>Hay multiples opciones</h2>
-  <h3>1. Suma de matrices (A \+ B) <button Id="Suma"></button><br>
-2. Resta de matrices (A \- B)<button Id="Resta"></button><br>
-3. Multiplicación de matrices (A x B)<button Id="Mult"></button><br>
-4. Multiplicación por escalar (k x A) <button Id="MultEsc"></button><br>
-5. Transposición de matriz (AT)<button Id="Transp"></button><br>
-6. Determinante de matriz (det(A))<button Id="Det"></button><br>
-7. Matriz inversa (A\-1)<button Id="Inv">Aca</button><br>
-8. Matriz identidad (In)<button Id="Ide"></button><br>
-  <label>Tamaño de Matriz (nxn)</label>
-  <input type= "number" id="tmatriz">
-  <button id="CM">Crear</button><br>
-  <label>Matriz A</label><br>
-  <div id="contenedorMatrizA" class="matriz"></div><br>
-  <label>Matriz B</label><br>
-  <div id="contenedorMatrizB" class="matriz"></div><br>
-  <label>Resultado</label><br>
-  <div id="contenedorMatrizR" class="matriz"></div>
+  <header>
+    <h1>Calculadora de Matrices</h1>
+    <p>Indique el tamaño de las matrices, luego creelas, rellene las casillas de la matriz o matrices, y por ultimo seleccione uno de los 8 tipos de operaciones que le damos a elegir.</p>
+    <p>El resultado aparecerá en la tercera matriz hacia la derecha. Tenga en cuenta que la matriz no puede ser menor a 2 o mayor a 10, y que estas siempre van a ser cuadradas.</p>
+  </header>
+
+  <section class="configuracion">
+    <label for="tmatriz">Tamaño de matriz (n x n):</label>
+    <input type="number" id="tmatrizAR" min="2" max="10" value="2" />
+    <button id="CMA">Crear matrices (A y R)</button>
+    <button id="Ejemplo">Generar ejemplo</button>
+  </section>
+
+  <section class="configuracion">
+    <label for="tmatriz">Tamaño de matriz (n x n):</label>
+    <input type="number" id="tmatrizB" min="2" max="10" value="2" />
+    <button id="CMB">Crear matriz B</button>
+  </section>
+
+  <section class="operaciones">
+    <h2>Operaciones disponibles</h2>
+    <div class="botones">
+      <button id="Suma">1. Suma (A + B)</button>
+      <button id="Resta">2. Resta (A - B)</button>
+      <button id="Mult">3. Multiplicación (A x B)</button>
+      <button id="MultEsc">4. Escalar x A</button>
+      <button id="Transp">5. Transpuesta (Aᵗ)</button>
+      <button id="Det">6. Determinante (det A)</button>
+      <button id="Inv">7. Inversa (A⁻¹)</button>
+      <button id="Ide">8. Identidad (In)</button>
+    </div>
+  </section>
+
+  <section class="matrices">
+    <div>
+      <h3>Matriz A</h3>
+      <div id="contenedorMatrizA" class="matriz"></div>
+    </div>
+    <div>
+      <h3>Matriz B</h3>
+      <div id="contenedorMatrizB" class="matriz"></div>
+    </div>
+    <div>
+      <h3>Resultado</h3>
+      <div id="contenedorMatrizR" class="matriz"></div>
+    </div>
+  </section>
+
   <script src="script.js"></script>
 </body>
 </html>
