@@ -44,6 +44,25 @@ createMatricesButton.addEventListener('click', () => {
   }
 });
 
+function verificarInversa(A, Ainv) {
+  const n = A.length;
+  const producto = multiplicarMatrices(A, Ainv);
+  const identidad = matrizIdentidad(n);
+
+  let esCorrecta = true;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      const diferencia = Math.abs(producto[i][j] - identidad[i][j]);
+      if (diferencia > 0.01) { 
+        esCorrecta = false;
+        break;
+      }
+    }
+    if (!esCorrecta) break;
+  }
+  return esCorrecta;
+}
+
 createMatrizBButton.addEventListener('click', () => {
   const tamano = parseInt(document.getElementById('tmatrizB').value);
   const contenedorB = document.getElementById('contenedorMatrizB');
@@ -236,7 +255,12 @@ OperandoResta.addEventListener('click', () => {
   }
   const A = leerMatriz('A', n1);
   const B = leerMatriz('B', n1);
-  mostrarResultado(restarMatrices(A, B));
+  const orden = document.getElementById('OrdenResta').value;
+  if (orden == "AmenosB"){
+  mostrarResultado(restarMatrices(A, B));}
+  else{
+    mostrarResultado(restarMatrices(B, A))
+  }
 });
 
 OperandoMult.addEventListener('click', () => {
@@ -294,20 +318,28 @@ OperandoDet.addEventListener('click', () => {
 });
 
 OperandoInversa.addEventListener('click', () => {
-  if (!tamanoActualA) {
-  alert("Debe crear la matriz A primero");
-  return;
-  }
-  const n = tamanoActualA;
-  const A = leerMatriz('A', n);
+  if (!tamanoActualA) return alert("Debe crear la matriz A primero");
+  const A = leerMatriz('A', tamanoActualA);
   try {
-    const inversa = matrizInversa(A);
-    mostrarResultado(inversa);
+    const Ainv = matrizInversa(A);
+    mostrarResultado(Ainv);
+
+    const esValida = verificarInversa(A, Ainv);
+    const mensaje = esValida
+      ? "✅ Verificación: A × A⁻¹ ≈ I"
+      : "⚠️ Verificación fallida: A × A⁻¹ ≠ I";
+
+  const mensajeContenedor = document.getElementById('verificacionMensaje');
+  mensajeContenedor.innerHTML = ''; 
+  mensajeContenedor.textContent = mensaje;
+  mensajeContenedor.style.marginTop = "10px";
+  mensajeContenedor.style.fontWeight = "bold";
+  mensajeContenedor.style.textAlign = "center";
+
   } catch (e) {
     alert(e.message);
   }
 });
-
 OperandoIdentidad.addEventListener('click', () => {
   if (!tamanoActualA) {
   alert("Debe crear la matriz A primero");

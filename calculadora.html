@@ -30,6 +30,13 @@
     <div class="botones">
       <button id="Suma">1. Suma (A + B)</button>
       <button id="Resta">2. Resta (A - B)</button>
+      <div class="resta-opcion">
+      <label for="tipoResta">Orden de resta:</label>
+      <select id="OrdenResta">
+      <option value="AmenosB">A - B</option>
+      <option value="BmenosA">B - A</option>
+      </select>
+      </div>
       <button id="Mult">3. Multiplicación (A x B)</button>
       <button id="MultEsc">4. Escalar x A</button>
       <button id="Transp">5. Transpuesta (Aᵗ)</button>
@@ -51,7 +58,9 @@
     <div>
       <h3>Resultado</h3>
       <div id="contenedorMatrizR" class="matriz"></div>
+      <div id="verificacionMensaje"></div> 
     </div>
+
   </section>
 
   <script src="script.js"></script>
